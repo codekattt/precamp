@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>주크박스</title>
+    <link href="./styles/jukebox.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper__header">
+            <div class="wrapper__title">
+                <div class="title">추억의 BGM</div>
+                <div class="subtitle">TODAY MUSIC</div>
+            </div>
+            <div class="divideLine"></div>
+            <div class="albumWrapper">
+                <div class="bgm">
+                    <img src="./images/jukebox-01.png">
+                    <span class="bgmtitle">눈의 꽃</span>
+                    <span class="singer">박효신</span>
+                </div>
+                <div class="bgm">
+                    <img src="./images/jukebox-02.png">
+                    <span class="bgmtitle">사랑했나봐</span>
+                    <span class="singer">윤도현</span>
+                </div>
+                <div class="bgm">
+                    <img src="./images/jukebox-03.png">
+                    <span class="bgmtitle">Y(Please Tell Me Why)</span>
+                    <span class="singer">프리스타일</span>
+                </div>
+            </div>    
+        </div>
+        <div class="wrapper__body">
+            <div class="wrapper__title">
+                <div class="title">실시간 HOT</div>
+                <div class="subtitle">LIVE HOT 100</div>   
+            </div>
+            <table>
+                <tr class="line__top"><!--1번째줄 시작-->
+                    <td class="row"><input type="checkbox" name="selected_all"></td>
+                    <td class="row">번호</td>
+                    <td>곡명</td>
+                    <td>아티스트</td>
+                </tr><!--1번째줄 끝-->
+
+                <tr class="line__contents"><!--2번째줄 시작-->
+                    <td class="row"><input type="checkbox" name="selected"></td>
+                    <td class="row">1</td>
+                    <td>seven (feat.Latto)</td>
+                    <td>정국</td>
+                </tr><!--2번째줄 끝-->
+
+                <tr class="line__contents"><!--3번째줄 시작-->
+                    <td class="row"><input type="checkbox" name="selected"></td>
+                    <td class="row">2</td>
+                    <td>Super Shy</td>
+                    <td>NewJeans</td>
+                </tr><!--3번째줄 끝-->
+
+                <tr class="line__contents"><!--4번째줄 시작-->
+                    <td class="row"><input type="checkbox" name="selected"></td>
+                    <td class="row">3</td>
+                    <td>헤어지자 말해요</td>
+                    <td>박재정</td>
+                </tr><!--4번째줄 끝-->
+
+                <tr class="line__contents"><!--5번째줄 시작-->
+                    <td class="row"><input type="checkbox" name="selected"></td>
+                    <td class="row">4</td>
+                    <td>퀸카</td>
+                    <td>(여자)아이들</td>
+                </tr><!--5번째줄 끝-->
+
+                <tr class="line__contents"><!--6번째줄 시작-->
+                    <td class="row"><input type="checkbox" name="selected"></td>
+                    <td class="row">5</td>
+                    <td>I AM</td>
+                    <td>IVE(아이브)</td>
+                </tr><!--6번째줄 끝-->
+            </table>
+        </div>
+    </div>
+</body>
+</html>

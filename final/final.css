@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+html,body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    width: 540px;
+    height: 960px;
+    padding: 60px 80px 53px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #aacdff;
+    border-radius: 10px;
+    box-shadow: 7px 7px 39px 0px #0068FF40;
+
+}
+
+h1 {
+    padding-right: 147px;
+    padding-bottom: 40px;
+    color: #0068ff;
+}
+
+.textBox1, .textBox2, .textBox3, .textBox4 {
+    width: 380px;
+    height: 60px;
+    border-radius: 7px;
+    border: 1px solid #d2d2d2;
+    color: #797979;
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 15px;
+
+}
+
+.phoneNum {
+    width: 380px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.phoneBox1, .phoneBox2, .phoneBox3 {
+    width: 100px;
+    height: 40px;
+    border: 1px solid #d2d2d2;
+    border-radius: 7px;
+    padding-left: 12px;
+}
+
+.certNum {
+    width: 380px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: #0068ff;
+}
+
+.liveTimer {
+    width: 380px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: #0068ff;
+}
+
+.button1, .button2 {
+    width: 120px;
+    height: 40px;
+    margin-left: 20px;
+    color: #d2d2d2;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid #d2d2d2;
+    border-radius: 7px;
+    background-color: white;
+}
+
+select {
+    width: 380px;
+    height: 60px;
+    border-radius: 7px;
+    border: 1px solid #d2d2d2;
+    color: #797979;
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 15px;
+}
+
+.radioButton {
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+}
+
+.radioButton_content {
+    margin: 0px 10px;
+}
+
+.dividedLine {
+    width: 380px;
+    border-top: 1px solid #e6e6e6;
+}
+
+.signUp {
+    width: 380px;
+    height: 75px;
+    border-radius: 10px;
+    border: 1px solid #d2d2d2;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 400;
+
+}
