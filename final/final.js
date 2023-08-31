@@ -1,5 +1,4 @@
 // 핸드폰번호 숫자 외 텍스트 방지 //
-
 function onlyNumber(event){
     event = event || window.event;
     var keyID = (event.which) ? event.which : event.keyCode;
@@ -19,7 +18,6 @@ function removeChar(event) {
 }
 
 // 핸드폰번호 입력 시 자동 포커스 이동 //
-
 const changeFocus1 = () => {
 
     let phone1 = document.getElementById("p1").value
@@ -67,8 +65,41 @@ const checkValidation = () => {
 
 // 타이머 작동 & 인증버튼 활성화 //
 let isStarted = false;
+let timer;
+let time;
 
 let auth = () => {
+
+    time = 5
+    timer = setInterval(function() {
+    
+        if(time>=0) {
+            let min = Math.floor( time / 60 )
+            let sec = String(time % 60).padStart(2, "0")
+            document.getElementById("timer").innerText = min + ":" + sec
+            time = time - 1          
+
+            document.getElementById("b1").disabled = true
+            document.getElementById("b1").style.cursor = "default"
+        
+        } else {
+            document.getElementById("b1").disabled = false
+            document.getElementById("b1").style.cursor = "pointer"
+            
+            document.getElementById("b2").disabled = true
+            document.getElementById("b2").style.color = "#d2d2d2"
+            document.getElementById("b2").style.border = "1px solid #d2d2d2"
+            document.getElementById("b2").style.backgroundColor = "transparent"
+            document.getElementById("b2").style.cursor = "default"
+            document.getElementById("timer").innerText = "3" + ":" + "00"
+            document.getElementById("target").innerText = "000000"
+            console.log("시간 초과")
+            isStarted = false
+            clearInterval(timer)
+            
+        }
+        
+    },1000)
 
     if(isStarted === false) {
         //  버튼 클릭 시 인증번호 부여 및 타이머 작동 //
@@ -78,65 +109,30 @@ let auth = () => {
         document.getElementById("b2").style.border = "1px solid #0068ff"
         document.getElementById("b2").style.backgroundColor = "#0068ff"
         document.getElementById("b2").style.cursor = "pointer"
-        const token = String(Math.floor(Math.random() * 1000000)).padStart(6, "0")
-    
-        document.getElementById("target").innerText = token    
-    
-        let time = 10
-        let timer
 
-        timer = setInterval(function() {
-        
-            if(time>=0) {
-                let min = Math.floor( time / 60 )
-                let sec = String(time % 60).padStart(2, "0")
-                document.getElementById("timer").innerText = min + ":" + sec
-                time = time - 1          
-            
-            } else {
-                document.getElementById("b2").disabled = true
-                document.getElementById("b2").style.color = "#d2d2d2"
-                document.getElementById("b2").style.border = "1px solid #d2d2d2"
-                document.getElementById("b2").style.backgroundColor = "transparent"
-                document.getElementById("b2").style.cursor = "default"
-                document.getElementById("timer").innerText = "3" + ":" + "00"
-                document.getElementById("target").innerText = "000000"
-                console.log("시간 초과")
-                isStarted = false
-                clearInterval(timer)
-                
-            }
-            
-        },1000)
-        
+        const token = String(Math.floor(Math.random() * 1000000)).padStart(6, "0")
+        document.getElementById("target").innerText = token 
         
     } else {
-        // 타이머가 작동중일 때 인증 확인 클릭하면 //
-        alert("인증완료")
-        document.getElementById("b2").disabled = true
-        document.getElementById("b2").style.cursor = "default"
-        document.getElementById("timer").innerText = "인증완료"
-        document.getElementById("signUpButton").disabled = false
-        document.getElementById("signUpButton").style.color = "white"
-        document.getElementById("signUpButton").style.border = "1px solid #0068ff"
-        document.getElementById("signUpButton").style.backgroundColor = "#0068ff"
-        document.getElementById("signUpButton").style.cursor = "pointer"
-        isStarted = true
-        clearInterval(timer)
-        console.log("인증 완료")
+        
     }
+
 }
 
-// let certButton = () => {
-
-//     alert("인증완료")
-//     document.getElementById("b2").disabled = true
-//     document.getElementById("b2").style.cursor = "default"
-//     document.getElementById("timer").innerText = "인증완료"
-//     console.log("인증 완료")
-//     isStarted = false
-//     clearInterval(timer)
-// }
+let auth2 = () => {
+    // 타이머가 작동중일 때 인증 확인 클릭하면 //
+    alert("인증완료")
+    document.getElementById("b2").disabled = true
+    document.getElementById("b2").style.cursor = "default"
+    document.getElementById("timer").innerText = "인증완료"
+    document.getElementById("signUpButton").disabled = false
+    document.getElementById("signUpButton").style.color = "white"
+    document.getElementById("signUpButton").style.border = "1px solid #0068ff"
+    document.getElementById("signUpButton").style.backgroundColor = "#0068ff"
+    document.getElementById("signUpButton").style.cursor = "pointer"
+    clearInterval(timer)
+    console.log("인증 완료")
+}
 
 let signupCheck = () => {
 
