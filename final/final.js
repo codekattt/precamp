@@ -70,7 +70,7 @@ let time;
 
 let auth = () => {
 
-    time = 5
+    time = 180
     timer = setInterval(function() {
     
         if(time>=0) {
@@ -136,7 +136,8 @@ let auth2 = () => {
 
 let signupCheck = () => {
 
-    let email = document.getElementById("email").value
+    let email_write = document.getElementById("email")
+    let email_check = document.getElementById("email").value
     let name = document.getElementById("name")
     let pwd = document.getElementById("pwd")
     let rePassword = document.getElementById("rePassword")
@@ -144,13 +145,13 @@ let signupCheck = () => {
     let genderWoman = document.getElementById("genderW").checked
     let genderMan = document.getElementById("genderM").checked
 
-    if(email.value === "" ) {
+    if(email_write.value === "" ) {
         alert("이메일을 입력하세요.")
         email.focus()
         return false
     } 
 
-    if(email.includes("@") === false) {
+    if(email_check.includes("@") === false) {
         alert("올바른 이메일 형식이 아닙니다.")
         email.focus()
         return false
